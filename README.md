@@ -489,7 +489,7 @@ See the below table for details on how to calculate the respective statistics.
 
 The Mailjet API allows you to easily access statistics for a specific recipient. This is useful when you need to review the delivery and engagement indicators for specific contacts.
 
-![recipient_stats](../images/stats-contact.png)
+![recipient_stats](../stats-contact.png)
 
 Use [`/contactstatistics`](/email-api/v3/contactstatistics/) to retrieve the respective information:
 
