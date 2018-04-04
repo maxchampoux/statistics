@@ -3,9 +3,7 @@
 The Mailjet API allows you to retrieve statistics on your sendings. Several endpoints have been designed for this purpose:
 
 * [Key Performance Statistics](#key-performance-statistics)
-* [Statistics Per Contact](#contact-statistics)
 * [Clicked Links Statistics](#stats-for-clicked-links)
-* [Mailbox Providers Statistics](#mailbox-providers-metrics)
 * [Geographical Statistics](#geographical-statistics)
 * [Additional Stats Resources](#additional-stats-resources)
 
@@ -21,19 +19,19 @@ The main improvements of the new system include:
 
 | Legacy statistics endpoints | New statistics endpoints |
 |---|---|
-| [`/apikeytotals`](/email-api/v3/apikeytotals/)  | [`/statcounters`](/email-api/v3/statcounters/) |
-| [`/domainstatistics`](/email-api/v3/domainstatistics/) | [`/statistics/recipient-esp`](/email-api/v3/statistics/recipient-esp/) |
-| [`/graphstatistics`](/email-api/v3/graphstatistics/) | [`/statcounters`](/email-api/v3/statcounters/) |
-| [`/listrecipientstatistics`](/email-api/v3/listrecipientstatistics/) | [`/statcounters`](/email-api/v3/statcounters/) |
-| [`/liststatistics`](/email-api/v3/liststatistics) | [`/statcounters`](/email-api/v3/statcounters/) |
-| [`/openstatistics`](/email-api/v3/openstatistics/) | [`/statcounters`](/email-api/v3/statcounters/) |
-| [`/toplinkclicked`](/email-api/v3/toplinkclicked/) | [`/statistics/link-click`](/email-api/v3/statistics/link-click/) |
+| [`/apikeytotals`](https://dev.mailjet.com/email-api/v3/apikeytotals/)  | [`/statcounters`](https://dev.mailjet.com/email-api/v3/statcounters/) |
+| [`/domainstatistics`](https://dev.mailjet.com/email-api/v3/domainstatistics/) | [`/statistics/recipient-esp`](https://dev.mailjet.com/email-api/v3/statistics/recipient-esp/) |
+| [`/graphstatistics`](https://dev.mailjet.com/email-api/v3/graphstatistics/) | [`/statcounters`](https://dev.mailjet.com/email-api/v3/statcounters/) |
+| [`/listrecipientstatistics`](https://dev.mailjet.com/email-api/v3/listrecipientstatistics/) | [`/statcounters`](https://dev.mailjet.com/email-api/v3/statcounters/) |
+| [`/liststatistics`](https://dev.mailjet.com/email-api/v3/liststatistics) | [`/statcounters`](https://dev.mailjet.com/email-api/v3/statcounters/) |
+| [`/openstatistics`](https://dev.mailjet.com/email-api/v3/openstatistics/) | [`/statcounters`](https://dev.mailjet.com/email-api/v3/statcounters/) |
+| [`/toplinkclicked`](https://dev.mailjet.com/email-api/v3/toplinkclicked/) | [`/statistics/link-click`](https://dev.mailjet.com/email-api/v3/statistics/link-click/) |
 
 In this guide we will focus on resources that are available for new / migrated users.
 
 ## Key Performance Statistics
 
-The <code>[/statcounters](/email-api/v3/statcounters/)</code> resource is a multifunctional tool that allows you to view stats through various prisms while varying the Source (API Key, Campaign or List), the Timing (Event-based or Message-based counters' timestamp), or the Timeframe (Lifetime, Day, Hour, Minute).
+The <code>[/statcounters](https://dev.mailjet.com/email-api/v3/statcounters/)</code> resource is a multifunctional tool that allows you to view stats through various prisms while varying the Source (API Key, Campaign or List), the Timing (Event-based or Message-based counters' timestamp), or the Timeframe (Lifetime, Day, Hour, Minute).
 
 The response will provide statistics that you can display in different ways:
 
@@ -43,7 +41,7 @@ The response will provide statistics that you can display in different ways:
 
 ### Stats at Campaign, List or APIKey Level
 
-The [`/statcounters`](/email-api/v3/statcounters/) code samples available in the following sections are done at a campaign level, which is indicated by the use of the following filters in the calls:
+The [`/statcounters`](https://dev.mailjet.com/email-api/v3/statcounters/) code samples available in the following sections are done at a campaign level, which is indicated by the use of the following filters in the calls:
 
 - `SourceId=$Campaign_ID` - Substitute `$CampaignID` with the ID of the Campaign you are interested in.
 - `CounterSource=Campaign`
@@ -54,13 +52,13 @@ Similarly, if you need the stats at an **Account** level, make the request with 
 
 ### Event-based vs Message-based Stats Timing
 
-The [`/statcounters`](/email-api/v3/statcounters/) resource allows you to retrieve information both based on the message sending time (message-based) and on the timing of the event occurrence (event-based).
+The [`/statcounters`](https://dev.mailjet.com/email-api/v3/statcounters/) resource allows you to retrieve information both based on the message sending time (message-based) and on the timing of the event occurrence (event-based).
 
 Message-based stats allow you to easily view the success of your sending by having the delivery rates / contact engagement details linked to the sending time.
 
 Event-based stats allow you to view the spread of events over time after the initial sending, helping you identify when recipients were most active / engaged with your campaigns.
 
-**Example:** A campaign is sent on Day1. There are 10 opens on Day2 and another 20 on Day3. If you use `CounterTiming=Message` in the call, the returned result will be for the messages that were opened, thus showing 30 opens on Day1. If you use `CounterTiming=Event`, [`/statcounters`](/email-api/v3/statcounters/) will return the information on the open events, showing 10 opens on Day2 and 20 on Day3.
+**Example:** A campaign is sent on Day1. There are 10 opens on Day2 and another 20 on Day3. If you use `CounterTiming=Message` in the call, the returned result will be for the messages that were opened, thus showing 30 opens on Day1. If you use `CounterTiming=Event`, [`/statcounters`](https://dev.mailjet.com/email-api/v3/statcounters/) will return the information on the open events, showing 10 opens on Day2 and 20 on Day3.
 
 To specify which details you need, use the `CounterTiming` filter.
 
@@ -77,7 +75,7 @@ In this section of the guide, we will explain which call you need to make to ret
 
 ![delivery_rates](./stats-delivery-rates.png)
 
-The most suitable endpoint to retrieve delivery rates statistics is <code>[/statcounters](/email-api/v3/statcounters/)</code>.
+The most suitable endpoint to retrieve delivery rates statistics is <code>[/statcounters](https://dev.mailjet.com/email-api/v3/statcounters/)</code>.
 
 By setting appropriate value for the <code>CounterSource</code>, <code>CounterResolution</code>, and <code>CounterTiming</code> filters you can generate an array of responses allowing to calculate the campaign statistics [as displayed in your Mailjet account](https://www.mailjet.com/docs/statistics#stats-overview).
 
@@ -187,7 +185,7 @@ The rules you might require to calculate / retrieve the respective statistics ca
 
 When you aim to analyze the quality of your contacts lists, you may want to retrieve your Contact Engagement Statistics on a specific campaign.
 
-That's exactly the same <code>[/statcounters](/email-api/v3/statcounters/)</code> request as when retrieving Key Delivery Statistics, but you will look at the metrics through a different prism.
+That's exactly the same <code>[/statcounters](https://dev.mailjet.com/email-api/v3/statcounters/)</code> request as when retrieving Key Delivery Statistics, but you will look at the metrics through a different prism.
 
 ![contact_engagement](./stats-contact-engage.png)
 
@@ -301,7 +299,7 @@ In the below table you will find the rules to retrieve and calculate the respect
 
 ### Evolution / Graph Statistics
 
-By using <code>[/statcounters](/email-api/v3/statcounters/)</code> and setting appropriate values for the <code>CounterSource</code>, <code>CounterResolution</code>, and <code>CounterTiming</code> filters you can generate an array of responses over a period of time. With this information you will be able to see the evolution of the campaign events over the selected time period.
+By using <code>[/statcounters](https://dev.mailjet.com/email-api/v3/statcounters/)</code> and setting appropriate values for the <code>CounterSource</code>, <code>CounterResolution</code>, and <code>CounterTiming</code> filters you can generate an array of responses over a period of time. With this information you will be able to see the evolution of the campaign events over the selected time period.
 
 ![stats_graph](.stats-campaign-graph.png)
 
@@ -391,7 +389,7 @@ Using multiple such calls with different CampaignID values for the `SourceID` fi
 
 ### Additional metrics
 
-Using the same <code>[/statcounters](/email-api/v3/statcounters/)</code> resource, if you want to dig a little deeper, you will be able to get more detailed metrics.
+Using the same <code>[/statcounters](https://dev.mailjet.com/email-api/v3/statcounters/)</code> resource, if you want to dig a little deeper, you will be able to get more detailed metrics.
 
 They can help with thoroughly analyzing your contacts engagement indicators.
 
@@ -491,7 +489,7 @@ The Mailjet API allows you to easily access statistics for a specific recipient.
 
 ![recipient_stats](./stats-contact.png)
 
-Use [`/contactstatistics`](/email-api/v3/contactstatistics/) to retrieve the respective information:
+Use [`/contactstatistics`](https://dev.mailjet.com/email-api/v3/contactstatistics/) to retrieve the respective information:
 
 {{contactstatistics_GET}}
 
@@ -507,7 +505,7 @@ Clicked links can help optimize you email engagement rate by showing you how dif
 
 ![stats_clicked_links](./stats_linkclick.png)
 
-As a result, you may want to use [`/statistics/link-click`](/email-api/v3/statistics/link-click/) to retrieve activity information based on the links in your campaign templates. With this endpoint you can track both unique clicks and total click events, as well as retrieve the URL and its position within the template. It gives you valuable insight into what links are used more often than others, possibly showing correlation between position / design and link popularity.
+As a result, you may want to use [`/statistics/link-click`](https://dev.mailjet.com/email-api/v3/statistics/link-click/) to retrieve activity information based on the links in your campaign templates. With this endpoint you can track both unique clicks and total click events, as well as retrieve the URL and its position within the template. It gives you valuable insight into what links are used more often than others, possibly showing correlation between position / design and link popularity.
 
 ```shell
 # View : View statistics for total and unique clicks for each clicked URL in a campaign email
@@ -546,7 +544,7 @@ In this section of the guide, we will explain which call you need to make to ret
 
 ![mailbox_providers](./stats-providers.png)
 
-The [`/statistics/recipient-esp`](/email-api/v3/statistics//recipient-esp) resource can be used to view statistics based on the Email Service Providers of the recipients of your campaign.
+The [`/statistics/recipient-esp`](https://dev.mailjet.com/email-api/v3/statistics//recipient-esp) resource can be used to view statistics based on the Email Service Providers of the recipients of your campaign.
 
 You must provide a `$CampaignID` in the `Campaign` filter in order to retrieve data.
 
@@ -651,12 +649,12 @@ Below you can see how to calculate stats by ESP as displayed in the Email Provid
 
 Geographical stats provide information on email opens and clicks, broken down by country. This helps you identify possible engagement issues with recipients from specific regions. With those details in mind, you can update your sendings to focus on countries that are performing well, or address issues with markets that are underperforming.
 
-Use the [/geostatistics](/email-api/v3/geostatistics/) resource to get information on opens and clicks by country.
+Use the [/geostatistics](https://dev.mailjet.com/email-api/v3/geostatistics/) resource to get information on opens and clicks by country.
 
 ## Additional Stats Resources
 
 The following statistic resources will allow you to view information about the events on your messages. They will show a log of events on your messages for a selected time period. By default, the payload response will include the log for the current day, but you can specify a timeframe with the `FromTS` and `ToTS` filters.
 
-- [/openinformation](/email-api/v3/openinformation/) : Will give you details on opens, including useful information like timestamp for each open event, UserAgent, CampaignID and UserID.
-- [/clickstatistics](/email-api/v3/clickstatistics/) : Shows information on click events, including timestamp for the click, URL, UserAgent and delay between sending and the click event.
-- [/bouncestatistics](/email-api/v3/bouncestatistics/) : Displays details for bounces, including bounce timestamp, campaign ID and contact ID, whether bounce is permanent or not.
+- [/openinformation](https://dev.mailjet.com/email-api/v3/openinformation/) : Will give you details on opens, including useful information like timestamp for each open event, UserAgent, CampaignID and UserID.
+- [/clickstatistics](https://dev.mailjet.com/email-api/v3/clickstatistics/) : Shows information on click events, including timestamp for the click, URL, UserAgent and delay between sending and the click event.
+- [/bouncestatistics](https://dev.mailjet.com/email-api/v3/bouncestatistics/) : Displays details for bounces, including bounce timestamp, campaign ID and contact ID, whether bounce is permanent or not.
