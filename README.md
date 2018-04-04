@@ -75,7 +75,7 @@ Delivery rate statistics are often the first metrics you want retrieved for your
 
 In this section of the guide, we will explain which call you need to make to retrieve and calculate the key performance indicators displayed in your Mailjet user interface.
 
-https://gitlab.mailjet.tech/devrel/slate_dev_documentation/raw/stats_guide_update/source/images/stats-delivery-rates.png
+![delivery_rates](./stats-delivery-rates.png)
 
 The most suitable endpoint to retrieve delivery rates statistics is <code>[/statcounters](/email-api/v3/statcounters/)</code>.
 
@@ -189,7 +189,7 @@ When you aim to analyze the quality of your contacts lists, you may want to retr
 
 That's exactly the same <code>[/statcounters](/email-api/v3/statcounters/)</code> request as when retrieving Key Delivery Statistics, but you will look at the metrics through a different prism.
 
-![contact_engagement](../images/stats-contact-engage.png)
+![contact_engagement](./stats-contact-engage.png)
 
 By setting appropriate value for the <code>CounterSource</code>, <code>CounterResolution</code>, and <code>CounterTiming</code> filters you can generate an array of responses allowing to calculate the campaign statistics [as displayed in your Mailjet account](https://www.mailjet.com/docs/statistics#stats-overview).
 
@@ -303,7 +303,7 @@ In the below table you will find the rules to retrieve and calculate the respect
 
 By using <code>[/statcounters](/email-api/v3/statcounters/)</code> and setting appropriate values for the <code>CounterSource</code>, <code>CounterResolution</code>, and <code>CounterTiming</code> filters you can generate an array of responses over a period of time. With this information you will be able to see the evolution of the campaign events over the selected time period.
 
-![stats_graph](../images/stats-campaign-graph.png)
+![stats_graph](.stats-campaign-graph.png)
 
 Use the following filter settings:
 
