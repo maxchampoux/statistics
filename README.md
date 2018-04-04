@@ -395,7 +395,7 @@ Using the same <code>[/statcounters](/email-api/v3/statcounters/)</code> resourc
 
 They can help with thoroughly analyzing your contacts engagement indicators.
 
-![additional_metrics](../images/stats-additional-metrics.png)
+![additional_metrics](./stats-additional-metrics.png)
 
 See the below table for details on how to calculate the respective statistics.
 
@@ -489,7 +489,7 @@ See the below table for details on how to calculate the respective statistics.
 
 The Mailjet API allows you to easily access statistics for a specific recipient. This is useful when you need to review the delivery and engagement indicators for specific contacts.
 
-![recipient_stats](../stats-contact.png)
+![recipient_stats](./stats-contact.png)
 
 Use [`/contactstatistics`](/email-api/v3/contactstatistics/) to retrieve the respective information:
 
@@ -505,7 +505,7 @@ Use [`/contactstatistics`](/email-api/v3/contactstatistics/) to retrieve the res
 
 Clicked links can help optimize you email engagement rate by showing you how different Sections, images or Calls-to-action affect how your recipients interact with your emails.
 
-![stats_clicked_links](../images/stats_linkclick.png)
+![stats_clicked_links](./stats_linkclick.png)
 
 As a result, you may want to use [`/statistics/link-click`](/email-api/v3/statistics/link-click/) to retrieve activity information based on the links in your campaign templates. With this endpoint you can track both unique clicks and total click events, as well as retrieve the URL and its position within the template. It gives you valuable insight into what links are used more often than others, possibly showing correlation between position / design and link popularity.
 
@@ -544,7 +544,7 @@ The mailbox provider statistics highlight how your emails perform across all the
 
 In this section of the guide, we will explain which call you need to make to retrieve and calculate the key performance indicators displayed in your Mailjet user interface.
 
-![mailbox_providers](../images/stats-providers.png)
+![mailbox_providers](./stats-providers.png)
 
 The [`/statistics/recipient-esp`](/email-api/v3/statistics//recipient-esp) resource can be used to view statistics based on the Email Service Providers of the recipients of your campaign.
 
@@ -652,8 +652,6 @@ Below you can see how to calculate stats by ESP as displayed in the Email Provid
 Geographical stats provide information on email opens and clicks, broken down by country. This helps you identify possible engagement issues with recipients from specific regions. With those details in mind, you can update your sendings to focus on countries that are performing well, or address issues with markets that are underperforming.
 
 Use the [/geostatistics](/email-api/v3/geostatistics/) resource to get information on opens and clicks by country.
-
-[code sample]
 
 ## Additional Stats Resources
 
