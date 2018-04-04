@@ -1,6 +1,3 @@
-# statistics
-New Statistics
-
 # Statistics
 
 The Mailjet API allows you to retrieve statistics on your sendings. Several endpoints have been designed for this purpose:
@@ -78,7 +75,7 @@ Delivery rate statistics are often the first metrics you want retrieved for your
 
 In this section of the guide, we will explain which call you need to make to retrieve and calculate the key performance indicators displayed in your Mailjet user interface.
 
-![delivery_rates](../images/stats-delivery-rates.png)
+https://gitlab.mailjet.tech/devrel/slate_dev_documentation/raw/stats_guide_update/source/images/stats-delivery-rates.png
 
 The most suitable endpoint to retrieve delivery rates statistics is <code>[/statcounters](/email-api/v3/statcounters/)</code>.
 
